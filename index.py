@@ -79,6 +79,10 @@ def get_chain(retriever):
     return chain
 
 # Define the /rag API endpoint
+@app.route('/')
+def home():
+    return 'App is running.'
+
 @app.route('/sts', methods=['POST'])
 def sts():
     filtered_retriever = FilteredRetriever(
